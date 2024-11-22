@@ -1,1 +1,0 @@
-# sample user index

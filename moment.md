@@ -43,7 +43,7 @@ const [onlineFormattedDate, getOnlineTime] = useLocalFormatOnline('YYYY-MM-DD HH
 
 ## API Reference
 
-### `setTimeOffset(date?: string | Date | any)`
+### `setTimeOffset`
 
 Sets the time offset to Asia/Jakarta (GMT+7).
 

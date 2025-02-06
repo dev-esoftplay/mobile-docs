@@ -32,7 +32,7 @@ await Storage.sendTelegram('myKey', 'A message for Telegram', () => {
   console.log("File sent successfully!");
 }, (error) => {
   console.error("Failed to send file:", error);
-}, '-1001234567890', (originalName) => `modified_${originalName}`); // Example chat ID and custom file name function
+}, 'chat_id_telegram', (originalName) => `modified_${originalName}`); // Example chat ID and custom file name function
 
 ```
 

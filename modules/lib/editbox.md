@@ -36,13 +36,15 @@ LibEditbox.hide();
 
 ### Static Methods
 
-* **`LibEditbox.show(label, defaultValue, keyboardType, onSubmit)`:** Shows the editbox modal.
-    * `label` (string): The label for the input field.
-    * `defaultValue` (string): The initial text in the input field.
-    * `keyboardType` (string): The keyboard type for the input.
-    * `onSubmit` (function): Callback function called when the user submits the text. Receives the entered text as an argument.
+#### **`LibEditbox.show(label, defaultValue, keyboardType, onSubmit)`**
+Shows the editbox modal.
+* `label` (string): The label for the input field.
+* `defaultValue` (string): The initial text in the input field.
+* `keyboardType` (string): The keyboard type for the input.
+* `onSubmit` (function): Callback function called when the user submits the text. Receives the entered text as an argument.
 
-* **`LibEditbox.hide()`:** Hides the editbox modal.
+#### **`LibEditbox.hide()`**
+ Hides the editbox modal.
 
 ### Props
 

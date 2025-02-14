@@ -1,100 +1,110 @@
-```markdown
 # LibIcon
 
-This component provides a unified way to use icons from various icon sets, including MaterialCommunityIcons, AntDesign, Entypo, EvilIcons, Feather, FontAwesome, Fontisto, Foundation, Ionicons, MaterialIcons, Octicons, SimpleLineIcons, and Zocial. It simplifies icon usage by providing static methods for each icon set.
+This component provides a convenient way to use icons from various icon sets within your React Native application. It wraps icons from `@expo/vector-icons` and provides a consistent interface for using them.
 
 ## Installation
 
-This component relies on `@expo/vector-icons` and `esoftplay`. Ensure you have them installed:
+This component relies on `@expo/vector-icons` and `esoftplay`. Ensure they are installed:
 
 ```bash
-npm install @expo/vector-icons esoftplay
+expo install @expo/vector-icons
+npm install esoftplay
 # or
-yarn add @expo/vector-icons esoftplay
+yarn add @expo/vector-icons
+yarn add esoftplay
 ```
 
 ## Usage
 
 ```javascript
-import { LibIcon } from 'esoftplay/cache/lib/icon/import';
+import LibIcon from './your-lib-icon-file'; // Replace with the correct path
 
-// Using MaterialCommunityIcons (the default):
+// Using MaterialCommunityIcons (default):
 <LibIcon name="check" size={30} color="blue" />
 
-// Using AntDesign:
-LibIcon.AntDesign({ name: "arrowright", size: 20, color: "red" });
-
 // Using Ionicons:
-LibIcon.Ionicons({ name: "ios-checkmark-circle-outline", size: 25, color: "green" });
+LibIcon.Ionicons({ name: "ios-add", size: 40, color: "red" });
 
-// ... other icon sets ...
+// Using AntDesign:
+LibIcon.AntDesign({ name: "plus", size: 25, color: "green" });
+
+// ... other icon sets
 ```
 
 ## API
 
-### Component Props (for MaterialCommunityIcons - the default)
+### `LibIcon` (Component)
 
-| Prop    | Type                 | Required | Description                                                                                                                                                                                                                                                                                                                                                                                    |
-| ------- | -------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`  | `MaterialCommunityIconsTypes` | Yes      | The name of the icon (see `@expo/vector-icons/build/esoftplay_icons` for available icons).                                                                                                                                                                                                                                                                                                                        |
-| `size`  | `number`             | No       | The size of the icon (defaults to 23).                                                                                                                                                                                                                                                                                                                                                                                      |
-| `color` | `string`             | No       | The color of the icon (defaults to `#222`).                                                                                                                                                                                                                                                                                                                                                                                    |
-| `style` | `TextStyle`          | No       | Additional styles for the icon.                                                                                                                                                                                                                                                                                                                                                                                          |
+The main component for rendering icons.  It defaults to using `MaterialCommunityIcons`.
 
-### Static Methods (for other icon sets)
+### Static Methods (Icon Set Renderers)
 
-The `LibIcon` component provides static methods for each icon set:
+The `LibIcon` component provides static methods for rendering icons from specific icon sets.  Each method accepts props specific to that icon set.
 
-* `LibIcon.AntDesign(props)`
-* `LibIcon.EntypoIcons(props)`
-* `LibIcon.EvilIcons(props)`
-* `LibIcon.Feather(props)`
-* `LibIcon.FontAwesome(props)`
-* `LibIcon.Fontisto(props)`
-* `LibIcon.Foundation(props)`
-* `LibIcon.Ionicons(props)`
-* `LibIcon.MaterialIcons(props)`
-* `LibIcon.Octicons(props)`
-* `LibIcon.SimpleLineIcons(props)`
-* `LibIcon.Zocial(props)`
+#### **`Ionicons(props: LibIoniconsProps): any`**
+Renders an icon from the `Ionicons` set.
+#### **`AntDesign(props: LibAntDesignIconProps): any`**
+Renders an icon from the `AntDesign` set.
+#### **`EvilIcons(props: LibEvilIconsIconProps): any`**
+Renders an icon from the `EvilIcons` set.
+#### **`Feather(props: LibFeatherIconProps): any`**
+Renders an icon from the `Feather` set.
+#### **`FontAwesome(props: LibFontAwesomeIconProps): any`**
+Renders an icon from the `FontAwesome` set.
+#### **`Fontisto(props: LibFontistoIconProps): any`**
+Renders an icon from the `Fontisto` set.
+#### **`Foundation(props: LibFoundationIconProps): any`**
+Renders an icon from the `Foundation` set.
+#### **`Octicons(props: LibOcticonsIconProps): any`**
+Renders an icon from the `Octicons` set.
+#### **`Zocial(props: LibZocialIconProps): any`**
+Renders an icon from the `Zocial` set.
+#### **`MaterialIcons(props: LibMaterialIconsIconProps): any`**
+Renders an icon from the `MaterialIcons` set.
+#### **`SimpleLineIcons(props: LibSimpleLineIconProps): any`**
+Renders an icon from the `SimpleLineIcons` set.
+#### **`EntypoIcons(props: LibEntypoIconProps): any`**
+Renders an icon from the `Entypo` set.
 
-Each of these methods accepts an object with the following properties:
+### Interfaces (Props)
 
-| Prop    | Type                 | Required | Description                                                                                                                                                                                                                                                                                                                                                                                    |
-| ------- | -------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`  | `[IconSet]Types`      | Yes      | The name of the icon (see `@expo/vector-icons/build/esoftplay_icons` for available icons for the specific icon set).                                                                                                                                                                                                                                                                                                                        |
-| `size`  | `number`             | No       | The size of the icon (defaults to 23).                                                                                                                                                                                                                                                                                                                                                                                      |
-| `color` | `string`             | No       | The color of the icon (defaults to `#222`).                                                                                                                                                                                                                                                                                                                                                                                    |
-| `style` | `TextStyle`          | No       | Additional styles for the icon.                                                                                                                                                                                                                                                                                                                                                                                          |
+Each icon set has a corresponding interface that defines the valid props for that icon.  These interfaces are based on the types provided by `@expo/vector-icons/build/esoftplay_icons`.
 
-Where `[IconSet]Types` is the specific type for that icon set (e.g., `AntDesignTypes`, `EntypoTypes`, etc.).
+*   **`LibAntDesignIconProps`:** Props for `AntDesign` icons.
+*   **`LibEvilIconsIconProps`:** Props for `EvilIcons` icons.
+*   **`LibFeatherIconProps`:** Props for `Feather` icons.
+*   **`LibFontAwesomeIconProps`:** Props for `FontAwesome` icons.
+*   **`LibFontistoIconProps`:** Props for `Fontisto` icons.
+*   **`LibFoundationIconProps`:** Props for `Foundation` icons.
+*   **`LibMaterialIconsIconProps`:** Props for `MaterialIcons` icons.
+*   **`LibEntypoIconProps`:** Props for `Entypo` icons.
+*   **`LibOcticonsIconProps`:** Props for `Octicons` icons.
+*   **`LibZocialIconProps`:** Props for `Zocial` icons.
+*   **`LibSimpleLineIconProps`:** Props for `SimpleLineIcons` icons.
+*   **`LibIoniconsProps`:** Props for `Ionicons` icons.
+*   **`LibIconProps`:** Props for the default `MaterialCommunityIcons` icon.
 
-## `LibIconStyle` Type
+### `LibIconState`
 
-```typescript
-export type LibIconStyle = MaterialCommunityIconsTypes
-```
-
-This type alias defines the type for the `name` prop of the default `LibIcon` component (MaterialCommunityIcons).
+An empty interface, currently not used.
 
 ## Functionality
 
-1. **Unified Icon Component:** The `LibIcon` component acts as a wrapper for different icon sets, providing a consistent way to use icons throughout your application.
-
-2. **Static Methods:** The static methods provide a convenient way to access icons from different sets without needing to import each icon set individually.
-
-3. **Default Icon Set:** MaterialCommunityIcons is the default icon set.  If you use the `LibIcon` component directly (without a static method), it will render a MaterialCommunityIcons icon.
-
-4. **Size and Color:** The `size` and `color` props allow you to customize the appearance of the icons.
-
-5. **Styling:** The `style` prop allows you to apply additional styles to the icons.
+This component acts as a wrapper around the icon sets from `@expo/vector-icons`. It simplifies the usage of icons by providing a consistent interface and reducing boilerplate code.  It also sets a default size and color for the icons.
 
 ## Important Considerations
 
-* **`@expo/vector-icons` Dependency:** This component relies on `@expo/vector-icons`. Ensure it is correctly installed and linked in your project.
-* **`esoftplay` Dependency:** This component extends `LibComponent` from `esoftplay`.
-* **Icon Set Types:** Pay close attention to the `[IconSet]Types` when using the static methods.  These types ensure that you are using valid icon names for each specific icon set.  Refer to the `@expo/vector-icons/build/esoftplay_icons` file for the complete list of available icons and their types.
-* **Default Size and Color:** The default size is 23, and the default color is `#222`.  You can override these by providing the `size` and `color` props.
-* **Styling:** The `style` prop allows you to apply additional styles to the icon, such as margins, padding, or other visual effects.
-* **Performance:** Using vector icons is generally performant. However, for very large numbers of icons, consider optimizing by using icon fonts or caching strategies.
-* **Accessibility:**  When using icons, ensure that they are accessible to users with disabilities.  If an icon conveys important information, provide alternative text (e.g., using `aria-label` or `accessible={true}` and `accessibilityLabel` props if you are using React Native's `Image` component to render the icon).  If the icon is purely decorative, you can set `aria-hidden={true}` or `accessible={false}`.
+*   **Icon Sets:**  You must import the desired icon set's types from `@expo/vector-icons/build/esoftplay_icons`.
+*   **Props:**  Refer to the documentation for `@expo/vector-icons` for the available icons and their props for each icon set.  The interfaces provided by `LibIcon` are based on those types.
+*   **Default Styling:** The component sets a default size (23) and color (#222) for the icons.  You can override these by providing your own `size` and `color` props.
+*   **Styling:**  You can apply additional styles to the icons using the `style` prop.
+*   **Consistency:** Using this component promotes consistency in icon usage throughout your application.
+*   **Extensibility:**  You can easily add support for other icon sets by creating new static methods and interfaces.
+* **Type Safety:** The use of interfaces ensures type safety when using the icons.  This helps to prevent errors and improves code maintainability.
+* **Default Size and Color:** The component provides default values for the `size` and `color` props.  This simplifies the usage of the icons and ensures a consistent look and feel.
+* **Styling:**  The `style` prop allows you to apply additional styles to the icons.  This gives you flexibility to customize the appearance of the icons.
+* **Component Structure:** The component uses a class component structure.
+* **Static Methods:** The static methods provide a convenient way to render icons from different icon sets.
+* **Icon Set Specific Props:** Each static method accepts props that are specific to the corresponding icon set.  This allows you to use all the features and customization options provided by the underlying icon library.
+* **Wrapper Component:** The `LibIcon` component acts as a wrapper around the `@expo/vector-icons` components.  This provides a consistent API and simplifies the usage of icons in your application.  It also allows you to easily switch between different icon sets if needed.
+* **Maintainability:**  Using this component makes your code more maintainable.  If you need to change the underlying icon library, you only need to update the `LibIcon` component, rather than updating all the icon usages in your application.

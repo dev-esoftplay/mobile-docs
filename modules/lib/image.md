@@ -54,28 +54,28 @@ Shows the image picker/camera interface.  This sets the `show` property in the g
 #### **`hide(): void`:**
 Hides the image picker/camera interface and resets the image-related #### state.  This sets the global state back to its initial state.
 #### **`showCropper(uri: string, forceCrop: boolean, ratio: string, message: string, result: (x: any) => void): void`:**
-* Navigates to the image cropper screen (`lib/image_crop`).
-    *   `uri`: The URI of the image to crop.
-    *   `forceCrop`: Whether cropping is mandatory.
-    *   `ratio`: The aspect ratio for cropping (e.g., "1:1", "4:3").
-    *   `message`: Optional message to display on the cropper screen.
-    *   `result`: Callback function that receives the cropped image URI.
+Navigates to the image cropper screen (`lib/image_crop`).
+* `uri`: The URI of the image to crop.
+* `forceCrop`: Whether cropping is mandatory.
+* `ratio`: The aspect ratio for cropping (e.g., "1:1", "4:3").
+* `message`: Optional message to display on the cropper screen.
+* `result`: Callback function that receives the cropped image URI.
 #### **`fromCamera(options?: LibImageCameraOptions): Promise<string>`:**
-* Opens the camera to capture an image.  Returns a Promise that resolves with the image URI.
+Opens the camera to capture an image.  Returns a Promise that resolves with the image URI.
   *   `options`: Optional configurations for camera.
   *   `crop`: Cropping options (`LibImageCrop`).
   *   `maxDimension`: Maximum dimension of the image.
 #### **`fromGallery(options?: LibImageGalleryOptions): Promise<string | string[]>`:**
-* Opens the image gallery to select an image(s). Returns a Promise that resolves with the image URI or an array of image URIs if multiple selections are allowed.
+Opens the image gallery to select an image(s). Returns a Promise that resolves with the image URI or an array of image URIs if multiple selections are allowed.
   *   `options`: Optional configurations for gallery.
   *   `crop`: Cropping options (`LibImageCrop`).
   *   `maxDimension`: Maximum dimension of the image.
   *   `multiple`: Whether multiple selections are allowed.
   *   `max`: Maximum number of images to select.
 #### **`processImage(result: any, maxDimension?: number): Promise<string>`:**
-* Processes the selected or captured image (resizing and uploading). Returns a Promise that resolves with the uploaded image URL.
-    *   `result`: The image selection result from `ImagePicker`.
-    *   `maxDimension`: Maximum dimension of the image.
+Processes the selected or captured image (resizing and uploading). Returns a Promise that resolves with the uploaded image URL.
+*   `result`: The image selection result from `ImagePicker`.
+*   `maxDimension`: Maximum dimension of the image.
 
 ### Instance Methods
 
@@ -85,31 +85,31 @@ Takes a picture using the camera.
 ### Interfaces
 
 #### **`LibImageCrop`:**
-* Defines the options for cropping an image.
-    *   `ratio`: Aspect ratio for cropping (e.g., "1:1", "4:3").
-    *   `forceCrop`: Whether cropping is mandatory.
-    *   `message`: Optional message to display on the cropper screen.
+Defines the options for cropping an image.
+* `ratio`: Aspect ratio for cropping (e.g., "1:1", "4:3").
+* `forceCrop`: Whether cropping is mandatory.
+* `message`: Optional message to display on the cropper screen.
 ####   **`LibImageProps`:**
-* Defines the props for the `LibImage` component.
-    *   `show`: Whether to show the image picker/camera.
-    *   `image`: The current image URI.
-    *   `maxDimension`: Maximum dimension of the image.
+Defines the props for the `LibImage` component.
+* `show`: Whether to show the image picker/camera.
+* `image`: The current image URI.
+* `maxDimension`: Maximum dimension of the image.
 #### **`LibImageState`:**
-* Defines the state for the `LibImage` component.
-    *   `type`: Camera type ("back" or "front").
-    *   `loading`: Whether the camera is taking a picture.
-    *   `image`: The current image URI.
-    *   `flashLight`: Flashlight status ("on" or "off").
+Defines the state for the `LibImage` component.
+* `type`: Camera type ("back" or "front").
+* `loading`: Whether the camera is taking a picture.
+* `image`: The current image URI.
+* `flashLight`: Flashlight status ("on" or "off").
 #### **`LibImageGalleryOptions`:**
-* Defines the options for selecting images from the gallery.
-    *   `crop`: Cropping options (`LibImageCrop`).
-    *   `maxDimension`: Maximum dimension of the image.
-    *   `multiple`: Whether multiple selections are allowed.
-    *   `max`: Maximum number of images to select.
+Defines the options for selecting images from the gallery.
+* `crop`: Cropping options (`LibImageCrop`).
+* `maxDimension`: Maximum dimension of the image.
+* `multiple`: Whether multiple selections are allowed.
+* `max`: Maximum number of images to select.
 #### **`LibImageCameraOptions`:**
-* Defines the options for capturing images from the camera.
-    *   `crop`: Cropping options (`LibImageCrop`).
-    *   `maxDimension`: Maximum dimension of the image.
+Defines the options for capturing images from the camera.
+ * `crop`: Cropping options (`LibImageCrop`).
+ * `maxDimension`: Maximum dimension of the image.
 
 ## Functionality
 

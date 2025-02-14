@@ -40,21 +40,29 @@ LibDialog.custom(<MyCustomView />);
 
 The `LibDialog` component provides several static methods for displaying different types of dialogs:
 
-* **`LibDialog.hide()`:** Hides the currently visible dialog.
+#### **`LibDialog.hide()`**
+Hides the currently visible dialog.
 
-* **`LibDialog.info(title, msg)`:** Shows an information dialog with the given title and message.
+#### **`LibDialog.info(title, msg)`**
+Shows an information dialog with the given title and message.
 
-* **`LibDialog.confirm(title, msg, ok, onPressOK, cancel, onPressCancel)`:** Shows a confirmation dialog with the given title, message, OK button text and action, and Cancel button text and action.
+#### **`LibDialog.confirm(title, msg, ok, onPressOK, cancel, onPressCancel)`**
+Shows a confirmation dialog with the given title, message, OK button text and action, and Cancel button text and action.
 
-* **`LibDialog.warningConfirm(title, msg, ok, onPressOK, cancel, onPressCancel)`:** Shows a warning confirmation dialog (danger style) with the given parameters.
+#### **`LibDialog.warningConfirm(title, msg, ok, onPressOK, cancel, onPressCancel)`**
+Shows a warning confirmation dialog (danger style) with the given parameters.
 
-* **`LibDialog.failed(title, msg)`:** Shows a failure dialog (danger style) with the given title and message.
+#### **`LibDialog.failed(title, msg)`**
+Shows a failure dialog (danger style) with the given title and message.
 
-* **`LibDialog.warning(title, msg)`:** Shows a warning dialog (danger style) with the given title and message.
+#### **`LibDialog.warning(title, msg)`**
+Shows a warning dialog (danger style) with the given title and message.
 
-* **`LibDialog.show(style, icon, title, msg, ok, cancel, onPressOK, onPressCancel)`:** Shows a dialog with the specified style, icon, title, message, OK button text and action, and Cancel button text and action.
+#### **`LibDialog.show(style, icon, title, msg, ok, cancel, onPressOK, onPressCancel)`**
+Shows a dialog with the specified style, icon, title, message, OK button text and action, and Cancel button text and action.
 
-* **`LibDialog.custom(view)`:** Shows a dialog with a custom view.
+#### **`LibDialog.custom(view)`**
+Shows a dialog with a custom view.
 
 ### Props
 

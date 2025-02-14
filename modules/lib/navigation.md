@@ -60,42 +60,69 @@ const tabConfigState = LibNavigation.useTabConfigState(tabConfig); // Access and
 
 ### Core Navigation
 
-*   `setRef(ref: any): void`: Sets the React Navigation ref. This is crucial for using most of the navigation functions.  Usually, you'll set this in your root navigation container.
-*   `setIsReady(isReady: boolean): void`: Sets the navigation readiness.
-*   `getIsReady(): boolean`: Gets the navigation readiness.
-*   `setNavigation(nav: any): void`: Sets the navigation object.
-*   `navigation(): any`: Gets the navigation object.
-*   `navigate<S extends keyof EspArgsInterface>(route: S, params?: EspArgsInterface[S]): void`: Navigates to a specified route with optional parameters.
-*   `navigateTab<S extends keyof EspArgsInterface>(route: S, tabIndex: number, params?: EspArgsInterface[S]): void`: Navigates to a route within a tab navigator and sets the active tab.
-*   `replace<S extends keyof EspArgsInterface>(route: S, params?: EspArgsInterface[S]): void`: Replaces the current screen with a new route and optional parameters.
-*   `push<S extends keyof EspArgsInterface>(route: S, params?: EspArgsInterface[S]): void`: Pushes a new screen onto the navigation stack.
-*   `reset(route?: LibNavigationRoutes, ...routes: LibNavigationRoutes[]): void`: Resets the navigation stack to a specified route or set of routes.
-*   `back(deep?: number): void`: Navigates back a specified number of screens.
-*   `backToRoot(): void`: Navigates back to the root screen of the navigation stack.
+#### `setRef(ref: any): void`
+Sets the React Navigation ref. This is crucial for using most of the navigation functions.  Usually, you'll set this in your root navigation container.
+#### `setIsReady(isReady: boolean): void`
+Sets the navigation readiness.
+#### `getIsReady(): boolean`
+Gets the navigation readiness.
+#### `setNavigation(nav: any): void`
+Sets the navigation object.
+#### `navigation(): any`
+Gets the navigation object.
+#### `navigate<S extends keyof EspArgsInterface>(route: S, params?: EspArgsInterface[S]): void`
+Navigates to a specified route with optional parameters.
+#### `navigateTab<S extends keyof EspArgsInterface>(route: S, tabIndex: number, params?: EspArgsInterface[S]): void`
+Navigates to a route within a tab navigator and sets the active tab.
+#### `replace<S extends keyof EspArgsInterface>(route: S, params?: EspArgsInterface[S]): void`
+Replaces the current screen with a new route and optional parameters.
+#### `push<S extends keyof EspArgsInterface>(route: S, params?: EspArgsInterface[S]): void`
+Pushes a new screen onto the navigation stack.
+#### `reset(route?: LibNavigationRoutes, ...routes: LibNavigationRoutes[]): void`
+Resets the navigation stack to a specified route or set of routes.
+#### `back(deep?: number): void`
+Navigates back a specified number of screens.
+#### `backToRoot(): void`
+Navigates back to the root screen of the navigation stack.
 
 ### Arguments and Results
 
-*   `getArgs(props: any, key: string, defOutput?: any): any`: Retrieves a specific argument passed to the current screen.
-*   `getArgsAll<S extends keyof EspArgsInterface>(props: any, defOutput?: any): EspArgsInterface[S]`: Retrieves all arguments passed to the current screen.
-*   `useBackResult(props: any): (res: any) => void`: Hook to handle results from a navigated screen.
-*   `getResultKey(props: any): number`: Gets the result key for the current screen.
-*   `cancelBackResult(key?: number): void`: Cancels a pending back result.
-*   `sendBackResult(result: any, key?: number): void`: Sends a result back to the calling screen.
-*   `navigateForResult<S extends keyof EspArgsInterface>(route: S, params?: EspArgsInterface[S], key?: number): Promise<any>`: Navigates to a screen and returns a Promise that resolves with the result.
+#### `getArgs(props: any, key: string, defOutput?: any): any`
+Retrieves a specific argument passed to the current screen.
+#### `getArgsAll<S extends keyof EspArgsInterface>(props: any, defOutput?: any): EspArgsInterface[S]`
+Retrieves all arguments passed to the current screen.
+#### `useBackResult(props: any): (res: any) => void`
+Hook to handle results from a navigated screen.
+#### `getResultKey(props: any): number`
+Gets the result key for the current screen.
+#### `cancelBackResult(key?: number): void`
+Cancels a pending back result.
+#### `sendBackResult(result: any, key?: number): void`
+Sends a result back to the calling screen.
+#### `navigateForResult<S extends keyof EspArgsInterface>(route: S, params?: EspArgsInterface[S], key?: number): Promise<any>`
+Navigates to a screen and returns a Promise that resolves with the result.
 
 ### Tab Navigation
 
-*   `createTabConfig<S extends keyof EspArgsInterface>(modules: S[], defaultIndex?: number): useGlobalReturn<LibNavigationTabConfigReturn<S>>`: Creates a tab configuration object.
-*   `useTabConfigState<S extends keyof EspArgsInterface>(tabConfig: useGlobalReturn<LibNavigationTabConfigReturn<S>>)`: Hook to access and manage the tab configuration state.
+#### `createTabConfig<S extends keyof EspArgsInterface>(modules: S[], defaultIndex?: number): useGlobalReturn<LibNavigationTabConfigReturn<S>>`
+Creates a tab configuration object.
+#### `useTabConfigState<S extends keyof EspArgsInterface>(tabConfig: useGlobalReturn<LibNavigationTabConfigReturn<S>>)`
+Hook to access and manage the tab configuration state.
 
 ### Other Utilities
 
-*   `getCurrentRouteName(): string`: Returns the name of the current route.
-*   `isFirstRoute(): boolean`: Checks if the current route is the first route in the navigation stack.
-*   `Injector(props: LibNavigationInjector): any`: Injects navigation props into a component.
-*   `setRedirect(func: Function, key?: number)`: Sets a redirect function.
-*   `delRedirect(key?: number)`: Deletes a redirect function.
-*   `redirect(key?: number)`: Executes a redirect function.
+#### `getCurrentRouteName(): string`
+Returns the name of the current route.
+#### `isFirstRoute(): boolean`
+Checks if the current route is the first route in the navigation stack.
+#### `Injector(props: LibNavigationInjector): any`
+Injects navigation props into a component.
+#### `setRedirect(func: Function, key?: number)`
+Sets a redirect function.
+#### `delRedirect(key?: number)`
+Deletes a redirect function.
+#### `redirect(key?: number)`
+Executes a redirect function.
 
 ## Interfaces
 
